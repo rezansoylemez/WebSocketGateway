@@ -14,29 +14,21 @@ const wss = new WebSocket.Server({ port: 8080 });
 
 const heroGateway = {
 
-  '/Create': { host: 'localhost', port: 5010, path: '/api/Hero/Create' },
+  '/Create': { host: 'localhost', port: 5010, path: '/api/HeroStat/Create' },
 
-  '/Delete': { host: 'localhost', port: 5010, path: '/api/Hero/Delete' },
+  '/Delete': { host: 'localhost', port: 5010, path: '/api/HeroStat/Delete' },
    
-  '/Update': { host: 'localhost', port: 5010, path: '/api/Hero/Update' },
+  '/Update': { host: 'localhost', port: 5010, path: '/api/HeroStat/Update' },
 
-  '/Remove': { host: 'localhost', port: 5010, path: '/api/Hero/Remove' },
+  '/Remove': { host: 'localhost', port: 5010, path: '/api/HeroStat/Remove' },
     
-  '/GetByIdHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+  '/GetByHeroId': { host: 'localhost', port: 5010, path: '/api/HeroStat/GetByHeroId' },
 
-  '/GetByIdHeroAndStat': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
+  '/GetList': { host: 'localhost', port: 5010, path: '/api/HeroStat/GetList' },
    
-  '/GetListByHeroType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+  '/GetPassiveListHeroStat': { host: 'localhost', port: 5010, path: '/api/HeroStat/GetListByHeroType' },
     
-  '/GetListByDifficultLevel': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByDifficultLevel' },
-
-  '/GetListHeroByStatus': { host: 'localhost', port: 5010, path: '/api/Hero/GetListHeroByStatus' },
-   
-  '/ChangeStatusHero': { host: 'localhost', port: 5010, path: '/api/Hero/ChangeStatusHero' },
-
-  '/GetListHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetListHero' },
-
-  '/GetActiveListHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetActiveListHero' }, 
+  '/GetActiveListHeroStat': { host: 'localhost', port: 5010, path: '/api/HeroStat/GetByIdHero' }, 
 };
 
 
