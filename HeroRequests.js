@@ -10,17 +10,33 @@ const url = require('url');
 const wss = new WebSocket.Server({ port: 8080 });
 
 
-
-
 // Map of URL paths to external gateways
 
-const gatewayMap = {
-  
-    '/GetByIdHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+const heroGateway = {
 
-    '/GetByIdHeroAndStat': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
+  '/Create': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+
+  '/Delete': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
    
-    '/GetListByHeroType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+  '/Update': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+
+  '/Remove': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+    
+  '/GetByIdHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+
+  '/GetByIdHeroAndStat': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
+   
+  '/GetListByHeroType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+    
+  '/GetListByDifficultLevel': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+
+  '/GetListHeroByStatus': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
+   
+  '/ChangeStatusHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+
+  '/GetListHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+
+  '/GetActiveListHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' }, 
 };
 
 
@@ -43,7 +59,7 @@ wss.on('connection', (ws) => {
 
       // Find the external gateway for the given URL
 
-      const gateway = gatewayMap[url];
+      const gateway = heroGateway[url];
 
       if (!gateway) {
 
