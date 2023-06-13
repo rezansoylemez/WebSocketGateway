@@ -5,13 +5,19 @@ const url = require('url');
 // Create a WebSocket server
 const wss = new WebSocket.Server({ port: 8080 });
 
-const gatewayMap = {
-  '/Create': { host: 'localhost', port: 5010, path: '/api/Hero/Create' },
-  '/Delete': { host: 'localhost', port: 5010, path: '/api/Hero/Delete' }, 
-  '/Update': { host: 'localhost', port: 5010, path: '/api/Hero/Update' },
-  '/Remove': { host: 'localhost', port: 5010, path: '/api/Hero/Remove' },
-  '/ChangeStatusHero': { host: 'localhost', port: 5010, path: '/api/Hero/ChangeStatusHero' },
+const authGateway = { 
+   
+  '/RefreshToken': { host: 'localhost', port: 5010, path: '/api/Auth/RefreshToken' }, 
+    
+  '/EmailAuthenicator': { host: 'localhost', port: 5010, path: '/api/Auth/EmailAuthenicator' },
+
+  '/EnableOtpAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/EnableOtpAuthenticator' },
+   
+  '/VerifyEmailAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/VerifyEmailAuthenticator' },
+    
+  '/VerifyOtpAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/VerifyOtpAuthenticator' }, 
 };
+
 
 // Map of URL paths to external gateways
 
@@ -23,7 +29,7 @@ wss.on('connection', (ws) => {
       const { url, params } = JSON.parse(message);
 
       // Find the external gateway for the given URL
-      const gateway = gatewayMap[url];
+      const gateway = authGateway[url];
       if (!gateway) {
         ws.send(JSON.stringify({ error: 'Gateway not found' }));
         return;
@@ -36,7 +42,7 @@ wss.on('connection', (ws) => {
       const requestOptions = {
         host: gateway.host,
         port: gateway.port,
-        method: 'POST',
+        method: 'GET',
         path: requestPath,
         headers: {
           'Content-Type': 'application/json',
