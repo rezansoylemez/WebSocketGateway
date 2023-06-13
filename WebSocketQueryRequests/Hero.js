@@ -9,30 +9,25 @@ const url = require('url');
 
 const wss = new WebSocket.Server({ port: 8080 });
 
+const gatewayMap = {
+  
+  '/GetByIdHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
 
-// Map of URL paths to external gateways
-
-const authGateway = {
-
-  '/Login': { host: 'localhost', port: 5010, path: '/api/Auth/Login' },
-
-  '/Register': { host: 'localhost', port: 5010, path: '/api/Auth/Register' },
+  '/GetByIdHeroAndStat': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
    
-  '/RefreshToken': { host: 'localhost', port: 5010, path: '/api/Auth/RefreshToken' },
+  '/GetListByHeroType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
 
-  '/RevokeToken': { host: 'localhost', port: 5010, path: '/api/Auth/RevokeToken' },
-    
-  '/EmailAuthenicator': { host: 'localhost', port: 5010, path: '/api/Auth/EmailAuthenicator' },
+  '/GetListByDifficultLevel': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByDifficultLevel' },
+  
+  '/GetListByHerByActive': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHerByActive' },
+  
+  '/GetListHeroByInActive': { host: 'localhost', port: 5010, path: '/api/Hero/GetListHeroByInActive' },
+  
+  '/GetListHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetListHero' },
 
-  '/EnableOtpAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/EnableOtpAuthenticator' },
-   
-  '/VerifyEmailAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/VerifyEmailAuthenticator' },
-    
-  '/VerifyOtpAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/VerifyOtpAuthenticator' }, 
 };
 
-
-
+// Map of URL paths to external gateways
 
 // Handle incoming WebSocket connectionss
 
@@ -51,7 +46,7 @@ wss.on('connection', (ws) => {
 
       // Find the external gateway for the given URL
 
-      const gateway = authGateway[url];
+      const gateway = gatewayMap[url];
 
       if (!gateway) {
 

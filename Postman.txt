@@ -1,0 +1,44 @@
+{
+  "url": "/gateway1",
+  "paths": [
+    "/api/Hero/GetListByHeroTypeAndStatus",
+    "/api/Hero/GetByIdHero"
+  ],
+  "params": {
+    "HeroType": "1",
+    "PageRequest.Page": "0",
+    "PageRequest.PageSize": "10"
+  },
+  "data": {}
+}
+
+{
+  "url": "/GetListByHeroType",
+  "params": {
+    "HeroType": "1",
+    "PageRequest.Page": "1",
+    "PageRequest.PageSize": "10"
+  },
+  "data": {}
+}
+
+
+
+Create : 
+
+{
+  "url": "/Create",
+  "params": {
+    "name": "Test Ws55",
+    "region": "Test Ws55",
+    "difficultLevel": 1,
+    "status": true,
+    "heroType": 1,
+    "description": "TestTest Ws",
+    "title": "Test Title Ws",
+    "story": "Test Story",
+    "iconUrl": "Test Icon",
+    "gamPrice": 540,
+    "creditPrice": 150
+  } 
+}
