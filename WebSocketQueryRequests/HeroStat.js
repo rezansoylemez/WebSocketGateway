@@ -12,16 +12,8 @@ const wss = new WebSocket.Server({ port: 8080 });
 
 // Map of URL paths to external gateways
 
-const heroStatGateway = {
-
-  '/Create': { host: 'localhost', port: 5010, path: '/api/HeroStat/Create' },
-
-  '/Delete': { host: 'localhost', port: 5010, path: '/api/HeroStat/Delete' },
-   
-  '/Update': { host: 'localhost', port: 5010, path: '/api/HeroStat/Update' },
-
-  '/Remove': { host: 'localhost', port: 5010, path: '/api/HeroStat/Remove' },
-    
+const heroStatGateway = { 
+  
   '/GetByHeroId': { host: 'localhost', port: 5010, path: '/api/HeroStat/GetByHeroId' },
 
   '/GetList': { host: 'localhost', port: 5010, path: '/api/HeroStat/GetList' },
