@@ -25,8 +25,24 @@ Get :
 
 
 
-Create : 
+Post Put: 
 
+
+Register : 
+{
+  "url": "/Register",
+  "params": { 
+      "firstName": "Test WebSocket3",
+      "lastName": "Test WebSocket3",
+      "email": "verner.zulauf58@ethereal.email",
+      "password": "DenemePassword123",
+      "phoneNumber": "12341231221",
+      "address": "string"
+  } 
+}
+
+
+Create Hero : 
 {
   "url": "/Create",
   "params": {
