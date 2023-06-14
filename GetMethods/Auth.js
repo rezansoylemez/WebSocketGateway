@@ -15,7 +15,6 @@ const authGateway = {
    
   '/VerifyEmailAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/VerifyEmailAuthenticator' },
     
-  '/VerifyOtpAuthenticator': { host: 'localhost', port: 5010, path: '/api/Auth/VerifyOtpAuthenticator' }, 
 };
 
 

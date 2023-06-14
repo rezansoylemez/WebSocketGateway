@@ -6,10 +6,10 @@ const url = require('url');
 const wss = new WebSocket.Server({ port: 8080 });
 
 const gatewayMap = {
-  '/Create': { host: 'localhost', port: 5010, path: '/api/Hero/Create' },
-  '/Delete': { host: 'localhost', port: 5010, path: '/api/Hero/Delete' }, 
+  '/Delete': { host: 'localhost', port: 5010, path: '/api/Hero/Delete' },
+ 
   '/Update': { host: 'localhost', port: 5010, path: '/api/Hero/Update' },
-  '/Remove': { host: 'localhost', port: 5010, path: '/api/Hero/Remove' },
+
   '/ChangeStatusHero': { host: 'localhost', port: 5010, path: '/api/Hero/ChangeStatusHero' },
 };
 
@@ -36,7 +36,7 @@ wss.on('connection', (ws) => {
       const requestOptions = {
         host: gateway.host,
         port: gateway.port,
-        method: 'POST',
+        method: 'PUT',
         path: requestPath,
         headers: {
           'Content-Type': 'application/json',

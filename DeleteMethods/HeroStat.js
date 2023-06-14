@@ -5,17 +5,10 @@ const url = require('url');
 // Create a WebSocket server
 const wss = new WebSocket.Server({ port: 8080 });
 
-const authGateway = {
-
-  '/Login': { host: 'localhost', port: 5010, path: '/api/Auth/Login' },
-
-  '/Register': { host: 'localhost', port: 5010, path: '/api/Auth/Register' },
-   
-  '/RefreshToken': { host: 'localhost', port: 5010, path: '/api/Auth/RefreshToken' },
-
-  '/RevokeToken': { host: 'localhost', port: 5010, path: '/api/Auth/RevokeToken' },    
+const gatewayMap = {  
+  '/Remove': { host: 'localhost', port: 5010, path: '/api/HeroStat/Remove' },
+    
 };
-
 
 // Map of URL paths to external gateways
 
@@ -27,7 +20,7 @@ wss.on('connection', (ws) => {
       const { url, params } = JSON.parse(message);
 
       // Find the external gateway for the given URL
-      const gateway = authGateway[url];
+      const gateway = gatewayMap[url];
       if (!gateway) {
         ws.send(JSON.stringify({ error: 'Gateway not found' }));
         return;
@@ -40,7 +33,7 @@ wss.on('connection', (ws) => {
       const requestOptions = {
         host: gateway.host,
         port: gateway.port,
-        method: 'POST',
+        method: 'DELETE',
         path: requestPath,
         headers: {
           'Content-Type': 'application/json',
