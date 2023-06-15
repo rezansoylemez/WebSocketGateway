@@ -11,31 +11,31 @@ const wss = new WebSocket.Server({ port: 8080 });
 
 const gatewayMap = {
   
-  '/GetByIdAbility': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbility' },
+  '/GetByIdAbility': { host: 'localhost', port: 5010, path: '/api/Ability/GetByIdAbility' },
 
-  '/GetByIdAbilityAndCategory': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbilityAndCategory' },
+  '/GetByIdAbilityAndCategory': { host: 'localhost', port: 5010, path: '/api/Ability/GetByIdAbilityAndCategory' },
 
-  '/GetByIdAbilityAndCombo': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbilityAndCombo' },
+  '/GetByIdAbilityAndCombo': { host: 'localhost', port: 5010, path: '/api/Ability/GetByIdAbilityAndCombo' },
 
-  '/GetByIdAbilityAndLevel': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbilityAndLevel' },
+  '/GetByIdAbilityAndLevel': { host: 'localhost', port: 5010, path: '/api/Ability/GetByIdAbilityAndLevel' },
 
-  '/GetListByAbilityType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByAbilityType' },
+  '/GetListByAbilityType': { host: 'localhost', port: 5010, path: '/api/Ability/GetListByAbilityType' },
 
-  '/GetListByCategoryId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByCategoryId' },
+  '/GetListByCategoryId': { host: 'localhost', port: 5010, path: '/api/Ability/GetListByCategoryId' },
 
-  '/GetListByComboId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByComboId' },
+  '/GetListByComboId': { host: 'localhost', port: 5010, path: '/api/Ability/GetListByComboId' },
 
-  '/GetListByLevelId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByLevelId' },
+  '/GetListByLevelId': { host: 'localhost', port: 5010, path: '/api/Ability/GetListByLevelId' },
 
-  '/GetListByCategoryId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByCategoryId' },
+  '/GetListByCategoryId': { host: 'localhost', port: 5010, path: '/api/Ability/GetListByCategoryId' },
 
-  '/GetByEffectTypeId': { host: 'localhost', port: 5010, path: '/api/Hero/GetByEffectTypeId' },
+  '/GetByEffectTypeId': { host: 'localhost', port: 5010, path: '/api/Ability/GetByEffectTypeId' },
 
-  '/GetByEffectStatId': { host: 'localhost', port: 5010, path: '/api/Hero/GetByEffectStatId' },
+  '/GetByEffectStatId': { host: 'localhost', port: 5010, path: '/api/Ability/GetByEffectStatId' },
  
-  '/GetListAbilityByActive': { host: 'localhost', port: 5010, path: '/api/Hero/GetListAbilityByActive' },
+  '/GetListAbilityByActive': { host: 'localhost', port: 5010, path: '/api/Ability/GetListAbilityByActive' },
   
-  '/GetListAbilityByInActive': { host: 'localhost', port: 5010, path: '/api/Hero/GetListAbilityByInActive' },
+  '/GetListAbilityByInActive': { host: 'localhost', port: 5010, path: '/api/Ability/GetListAbilityByInActive' },
 
 };
 
