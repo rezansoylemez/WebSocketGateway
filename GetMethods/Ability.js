@@ -5,31 +5,43 @@ const http = require('http');
 const url = require('url');
 
 
-
-
 // Create a WebSocket server
 
 const wss = new WebSocket.Server({ port: 8080 });
 
-
-
-
-// Map of URL paths to external gateways
-
 const gatewayMap = {
+  
+  '/GetByIdAbility': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbility' },
 
-  '/GetByIdHero': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHero' },
+  '/GetByIdAbilityAndCategory': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbilityAndCategory' },
 
-  '/GetByIdHeroAndStat': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdHeroAndStat' },
-   
-  '/GetListByHeroType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByHeroType' },
+  '/GetByIdAbilityAndCombo': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbilityAndCombo' },
+
+  '/GetByIdAbilityAndLevel': { host: 'localhost', port: 5010, path: '/api/Hero/GetByIdAbilityAndLevel' },
+
+  '/GetListByAbilityType': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByAbilityType' },
+
+  '/GetListByCategoryId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByCategoryId' },
+
+  '/GetListByComboId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByComboId' },
+
+  '/GetListByLevelId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByLevelId' },
+
+  '/GetListByCategoryId': { host: 'localhost', port: 5010, path: '/api/Hero/GetListByCategoryId' },
+
+  '/GetByEffectTypeId': { host: 'localhost', port: 5010, path: '/api/Hero/GetByEffectTypeId' },
+
+  '/GetByEffectStatId': { host: 'localhost', port: 5010, path: '/api/Hero/GetByEffectStatId' },
+ 
+  '/GetListAbilityByActive': { host: 'localhost', port: 5010, path: '/api/Hero/GetListAbilityByActive' },
+  
+  '/GetListAbilityByInActive': { host: 'localhost', port: 5010, path: '/api/Hero/GetListAbilityByInActive' },
 
 };
 
+// Map of URL paths to external gateways
 
-
-
-// Handle incoming WebSocket connections
+// Handle incoming WebSocket connectionss
 
 wss.on('connection', (ws) => {
 
